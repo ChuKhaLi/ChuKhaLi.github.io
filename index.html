@@ -205,10 +205,10 @@
                             </div>
                         </div>
                         <div class="editor-content">
-                            <pre class="code-block">
+                            <pre class="code-block" id="program-cs" style="display: block;">
 <span class="line-number">1</span>  <span class="keyword">using</span> <span class="namespace">System</span>;
 <span class="line-number">2</span>  <span class="keyword">using</span> <span class="namespace">Microsoft.AspNetCore</span>;
-<span class="line-number">3</span>  
+<span class="line-number">3</span>
 <span class="line-number">4</span>  <span class="keyword">public class</span> <span class="class-name">FullStackDeveloper</span>
 <span class="line-number">5</span>  {
 <span class="line-number">6</span>      <span class="keyword">public string</span> Name = <span class="string">"Chung Dinh Nguyen"</span>;
@@ -218,6 +218,22 @@
 <span class="line-number">10</span>     };
 <span class="line-number">11</span>     <span class="keyword">public int</span> Experience = <span class="number">5</span>;
 <span class="line-number">12</span> }
+                            </pre>
+                            <pre class="code-block" id="component-ts" style="display: none;">
+<span class="line-number">1</span>  <span class="keyword">import</span> { Component } <span class="keyword">from</span> <span class="string">'@angular/core'</span>;
+<span class="line-number">2</span>  <span class="keyword">import</span> { HttpClient } <span class="keyword">from</span> <span class="string">'@angular/common/http'</span>;
+<span class="line-number">3</span>
+<span class="line-number">4</span>  <span class="keyword">@Component</span>({
+<span class="line-number">5</span>    selector: <span class="string">'app-developer'</span>,
+<span class="line-number">6</span>    templateUrl: <span class="string">'./developer.component.html'</span>
+<span class="line-number">7</span>  })
+<span class="line-number">8</span>  <span class="keyword">export class</span> <span class="class-name">DeveloperComponent</span> {
+<span class="line-number">9</span>    developer = {
+<span class="line-number">10</span>     name: <span class="string">'Chung Dinh Nguyen'</span>,
+<span class="line-number">11</span>     skills: [<span class="string">'Angular'</span>, <span class="string">'TypeScript'</span>],
+<span class="line-number">12</span>     experience: <span class="number">5</span>
+<span class="line-number">13</span>   };
+<span class="line-number">14</span> }
                             </pre>
                         </div>
                     </div>

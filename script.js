@@ -33,6 +33,7 @@ class PortfolioWebsite {
         this.setupMobileMenu();
         this.setupSmoothScrolling();
         this.setupThemeToggle();
+        this.setupCodeEditor();
     }
 
     setupEventListeners() {
@@ -489,6 +490,61 @@ class PortfolioWebsite {
             meta.name = 'theme-color';
             meta.content = theme === 'light' ? '#ffffff' : '#0f172a';
             document.head.appendChild(meta);
+        }
+    }
+
+    setupCodeEditor() {
+        const tabs = document.querySelectorAll('.tab');
+        const programCs = document.getElementById('program-cs');
+        const componentTs = document.getElementById('component-ts');
+        
+        if (!tabs.length || !programCs || !componentTs) return;
+        
+        tabs.forEach(tab => {
+            tab.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                // Remove active class from all tabs
+                tabs.forEach(t => t.classList.remove('active'));
+                
+                // Add active class to clicked tab
+                tab.classList.add('active');
+                
+                // Get tab name and show corresponding code block
+                const tabName = tab.textContent.trim();
+                
+                // Hide all code blocks first
+                programCs.style.display = 'none';
+                componentTs.style.display = 'none';
+                
+                // Show the selected code block with smooth transition
+                if (tabName === 'Program.cs') {
+                    programCs.style.display = 'block';
+                    programCs.style.opacity = '0';
+                    setTimeout(() => {
+                        programCs.style.opacity = '1';
+                    }, 50);
+                } else if (tabName === 'Component.ts') {
+                    componentTs.style.display = 'block';
+                    componentTs.style.opacity = '0';
+                    setTimeout(() => {
+                        componentTs.style.opacity = '1';
+                    }, 50);
+                }
+            });
+        });
+        
+        // Add CSS transitions for smooth effect
+        const style = document.createElement('style');
+        style.textContent = `
+            .code-block {
+                transition: opacity 0.3s ease;
+            }
+        `;
+        
+        if (!document.querySelector('style[data-code-editor]')) {
+            style.setAttribute('data-code-editor', 'true');
+            document.head.appendChild(style);
         }
     }
 
