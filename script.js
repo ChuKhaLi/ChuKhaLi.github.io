@@ -302,32 +302,37 @@ class PortfolioWebsite {
         
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            this.handleFormSubmission(contactForm);
+            this.handleMailtoSubmission(contactForm);
         });
     }
 
-    handleFormSubmission(form) {
+    handleMailtoSubmission(form) {
         const formData = new FormData(form);
-        const data = {
-            name: formData.get('name'),
-            email: formData.get('email'),
-            subject: formData.get('subject'),
-            message: formData.get('message')
-        };
+        const name = formData.get('name');
+        const email = formData.get('email');
+        const subject = formData.get('subject');
+        const message = formData.get('message');
 
-        // Show loading state
-        const submitButton = form.querySelector('button[type="submit"]');
-        const originalText = submitButton.innerHTML;
-        submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-        submitButton.disabled = true;
+        // Validate form data
+        if (!name || !email || !subject || !message) {
+            this.showNotification('Please fill in all fields.', 'error');
+            return;
+        }
 
-        // Simulate form submission (replace with actual API call)
+        // Create mailto URL with form data
+        const emailBody = `Hi Chung,\n\nName: ${name}\nEmail: ${email}\n\nMessage:\n${message}\n\nBest regards,\n${name}`;
+        const mailtoUrl = `mailto:chungdinhnguyen.ukb@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
+        
+        // Open default email client
+        window.location.href = mailtoUrl;
+        
+        // Show success notification
+        this.showNotification('Opening your email client...', 'success');
+        
+        // Reset form after a short delay
         setTimeout(() => {
-            this.showNotification('Message sent successfully! I\'ll get back to you soon.', 'success');
             form.reset();
-            submitButton.innerHTML = originalText;
-            submitButton.disabled = false;
-        }, 2000);
+        }, 1000);
     }
 
     showNotification(message, type = 'info') {
