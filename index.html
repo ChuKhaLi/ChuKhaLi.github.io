@@ -23,99 +23,28 @@
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="manifest" href="site.webmanifest">
-    <meta name="msapplication-TileColor" content="#8B5CF6">
-    <meta name="msapplication-TileImage" content="mstile-144x144.png">
-    <meta name="theme-color" content="#8B5CF6">
+    <meta name="theme-color" content="#1e40af">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@300;400;500&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Anime.js Animation Library -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     
     <!-- Styles -->
     <link rel="stylesheet" href="styles.css">
-    
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Chung Dinh Nguyen",
-        "jobTitle": "Full Stack .NET & Angular Developer",
-        "description": "Award-winning Full Stack Developer specializing in .NET and Angular with proven track record of building enterprise-scale applications used by 70,000+ businesses globally.",
-        "url": "https://chungdinhnguyen.dev",
-        "image": "https://chungdinhnguyen.dev/favicon.svg",
-        "email": "chungdinhnguyen.ukb@gmail.com",
-        "telephone": "+84348925736",
-        "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Remote",
-            "addressRegion": "Global"
-        },
-        "sameAs": [
-            "https://www.linkedin.com/in/chung-nguyen-dinh/",
-            "https://github.com/ChuKhaLi"
-        ],
-        "alumniOf": {
-            "@type": "EducationalOrganization",
-            "name": "University of Kinh Bac",
-            "startDate": "2013",
-            "endDate": "2017"
-        },
-        "worksFor": {
-            "@type": "Organization",
-            "name": "Kiotviet Technology Corporation",
-            "startDate": "2018"
-        },
-        "knowsAbout": [
-            ".NET Core",
-            "Angular",
-            "ASP.NET MVC",
-            "Entity Framework",
-            "TypeScript",
-            "JavaScript",
-            "C#",
-            "MS SQL Server",
-            "MongoDB",
-            "Redis",
-            "Web API",
-            "Bootstrap",
-            "HTML5",
-            "CSS3",
-            "Git"
-        ],
-        "award": [
-            "Best Staff Award 2022 - Kiotviet Technology Corporation",
-            "Best Staff Award 2023 - Kiotviet Technology Corporation",
-            "Top 3 Graduated Students 2017 - University of Kinh Bac"
-        ],
-        "hasCredential": [
-            {
-                "@type": "EducationalOccupationalCredential",
-                "name": "Bachelor of Software Engineering",
-                "educationalLevel": "Bachelor's Degree",
-                "credentialCategory": "Degree"
-            }
-        ]
-    }
-    </script>
 </head>
 <body>
     <!-- Loading Screen -->
-    <div id="loading-screen">
-        <div class="loader">
-            <div class="code-block">
-                <span class="code-line">public class <span class="highlight">Developer</span> {</span>
-                <span class="code-line">    Name = "Chung Dinh Nguyen";</span>
-                <span class="code-line">    Experience = "5+ years";</span>
-                <span class="code-line">    Specialization = ".NET & Angular";</span>
-                <span class="code-line">}</span>
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-content">
+            <div class="loading-logo">
+                <span class="logo-text">Chung<span class="highlight">.Dev</span></span>
+            </div>
+            <div class="loading-progress">
+                <div class="progress-bar"></div>
             </div>
         </div>
     </div>
@@ -127,7 +56,7 @@
                 <span class="logo-text">Chung<span class="highlight">.Dev</span></span>
             </a>
             <div class="nav-menu" id="nav-menu">
-                <a href="#home" class="nav-link" data-section="home">Home</a>
+                <a href="#home" class="nav-link active" data-section="home">Home</a>
                 <a href="#about" class="nav-link" data-section="about">About</a>
                 <a href="#skills" class="nav-link" data-section="skills">Skills</a>
                 <a href="#experience" class="nav-link" data-section="experience">Experience</a>
@@ -137,113 +66,125 @@
             </div>
             <div class="nav-actions">
                 <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
-                    <i class="fas fa-sun" id="theme-icon"></i>
+                    <i data-lucide="sun" class="theme-icon"></i>
+                </button>
+                <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
                 </button>
             </div>
-            <div class="nav-toggle" id="nav-toggle">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
         </div>
+        <div class="scroll-progress" id="scroll-progress"></div>
     </nav>
-
-    <!-- Progress Bar -->
-    <div class="progress-bar" id="progress-bar"></div>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="hero-container">
+        <div class="hero-background">
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+            <div class="gradient-orb orb-3"></div>
+        </div>
+        <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1 class="hero-title" data-anime="fade-up" data-anime-delay="200">
-                        Hi, I'm <span class="highlight">Chung Dinh Nguyen</span>
+                    <div class="hero-greeting">Hello, I'm</div>
+                    <h1 class="hero-title">
+                        <span class="name-highlight">Chung Dinh Nguyen</span>
                     </h1>
-                    <div class="hero-subtitle" data-anime="fade-up" data-anime-delay="400">
-                        <span id="typing-text" class="typing-text"></span>
+                    <div class="hero-subtitle">
+                        <span class="typing-text" id="typing-text"></span>
                         <span class="cursor">|</span>
                     </div>
-                    <p class="hero-description" data-anime="fade-up" data-anime-delay="600">
+                    <p class="hero-description">
                         Award-winning Full Stack Developer specializing in <strong>.NET</strong> and <strong>Angular</strong>
                         with proven track record of building enterprise-scale applications used by <strong>70,000+ businesses</strong> globally.
                     </p>
-                    <div class="hero-stats" data-anime="fade-up" data-anime-delay="800">
-                        <div class="stat-item" data-anime="zoom-in" data-anime-delay="1000">
-                            <span class="stat-number">5+</span>
-                            <span class="stat-label">Years Experience</span>
+                    <div class="hero-stats">
+                        <div class="stat-card">
+                            <div class="stat-number">5+</div>
+                            <div class="stat-label">Years Experience</div>
                         </div>
-                        <div class="stat-item" data-anime="zoom-in" data-anime-delay="1100">
-                            <span class="stat-number">70K+</span>
-                            <span class="stat-label">Users Impacted</span>
+                        <div class="stat-card">
+                            <div class="stat-number">70K+</div>
+                            <div class="stat-label">Users Impacted</div>
                         </div>
-                        <div class="stat-item" data-anime="zoom-in" data-anime-delay="1200">
-                            <span class="stat-number">100%</span>
-                            <span class="stat-label">Success Rate</span>
+                        <div class="stat-card">
+                            <div class="stat-number">100%</div>
+                            <div class="stat-label">Success Rate</div>
                         </div>
-                        <div class="stat-item" data-anime="zoom-in" data-anime-delay="1300">
-                            <span class="stat-number">2x</span>
-                            <span class="stat-label">Award Winner</span>
+                        <div class="stat-card">
+                            <div class="stat-number">2x</div>
+                            <div class="stat-label">Award Winner</div>
                         </div>
                     </div>
-                    <div class="hero-buttons" data-anime="fade-up" data-anime-delay="1400">
+                    <div class="hero-actions">
                         <a href="#contact" class="btn btn-primary">
-                            <i class="fas fa-envelope"></i>
-                            Get In Touch
+                            <i data-lucide="mail"></i>
+                            <span>Get In Touch</span>
                         </a>
                         <a href="#projects" class="btn btn-secondary">
-                            <i class="fas fa-code"></i>
-                            View My Work
+                            <i data-lucide="code"></i>
+                            <span>View My Work</span>
+                        </a>
+                        <a href="docs/CV-Chung-Dinh-Nguyen.pdf" class="btn btn-outline" target="_blank">
+                            <i data-lucide="download"></i>
+                            <span>Download CV</span>
                         </a>
                     </div>
                 </div>
-                <div class="hero-visual" data-anime="fade-left" data-anime-delay="600">
-                    <div class="code-editor">
-                        <div class="editor-header">
-                            <div class="editor-tabs">
-                                <span class="tab active">Program.cs</span>
-                                <span class="tab">Component.ts</span>
+                <div class="hero-visual">
+                    <div class="code-window">
+                        <div class="window-header">
+                            <div class="window-controls">
+                                <span class="control close"></span>
+                                <span class="control minimize"></span>
+                                <span class="control maximize"></span>
                             </div>
+                            <div class="window-title">developer.cs</div>
                         </div>
-                        <div class="editor-content">
-                            <pre class="code-block" id="program-cs" style="display: block;">
-<span class="line-number">1</span>  <span class="keyword">using</span> <span class="namespace">System</span>;
-<span class="line-number">2</span>  <span class="keyword">using</span> <span class="namespace">Microsoft.AspNetCore</span>;
-<span class="line-number">3</span>
-<span class="line-number">4</span>  <span class="keyword">public class</span> <span class="class-name">FullStackDeveloper</span>
-<span class="line-number">5</span>  {
-<span class="line-number">6</span>      <span class="keyword">public string</span> Name = <span class="string">"Chung Dinh Nguyen"</span>;
-<span class="line-number">7</span>      <span class="keyword">public string[]</span> Skills = {
-<span class="line-number">8</span>          <span class="string">".NET Core"</span>, <span class="string">"Angular"</span>,
-<span class="line-number">9</span>          <span class="string">"ASP.NET MVC"</span>, <span class="string">"Entity Framework"</span>
-<span class="line-number">10</span>     };
-<span class="line-number">11</span>     <span class="keyword">public int</span> Experience = <span class="number">5</span>;
-<span class="line-number">12</span> }
-                            </pre>
-                            <pre class="code-block" id="component-ts" style="display: none;">
-<span class="line-number">1</span>  <span class="keyword">import</span> { Component } <span class="keyword">from</span> <span class="string">'@angular/core'</span>;
-<span class="line-number">2</span>  <span class="keyword">import</span> { HttpClient } <span class="keyword">from</span> <span class="string">'@angular/common/http'</span>;
-<span class="line-number">3</span>
-<span class="line-number">4</span>  <span class="keyword">@Component</span>({
-<span class="line-number">5</span>    selector: <span class="string">'app-developer'</span>,
-<span class="line-number">6</span>    templateUrl: <span class="string">'./developer.component.html'</span>
-<span class="line-number">7</span>  })
-<span class="line-number">8</span>  <span class="keyword">export class</span> <span class="class-name">DeveloperComponent</span> {
-<span class="line-number">9</span>    developer = {
-<span class="line-number">10</span>     name: <span class="string">'Chung Dinh Nguyen'</span>,
-<span class="line-number">11</span>     skills: [<span class="string">'Angular'</span>, <span class="string">'TypeScript'</span>],
-<span class="line-number">12</span>     experience: <span class="number">5</span>
-<span class="line-number">13</span>   };
-<span class="line-number">14</span> }
-                            </pre>
+                        <div class="code-content">
+                            <div class="code-line">
+                                <span class="line-number">1</span>
+                                <span class="code-text"><span class="keyword">public class</span> <span class="class-name">Developer</span> {</span>
+                            </div>
+                            <div class="code-line">
+                                <span class="line-number">2</span>
+                                <span class="code-text">    <span class="keyword">public string</span> Name = <span class="string">"Chung Dinh Nguyen"</span>;</span>
+                            </div>
+                            <div class="code-line">
+                                <span class="line-number">3</span>
+                                <span class="code-text">    <span class="keyword">public int</span> Experience = <span class="number">5</span>;</span>
+                            </div>
+                            <div class="code-line">
+                                <span class="line-number">4</span>
+                                <span class="code-text">    <span class="keyword">public string[]</span> Skills = {</span>
+                            </div>
+                            <div class="code-line">
+                                <span class="line-number">5</span>
+                                <span class="code-text">        <span class="string">".NET Core"</span>, <span class="string">"Angular"</span>,</span>
+                            </div>
+                            <div class="code-line">
+                                <span class="line-number">6</span>
+                                <span class="code-text">        <span class="string">"ASP.NET MVC"</span>, <span class="string">"Entity Framework"</span></span>
+                            </div>
+                            <div class="code-line">
+                                <span class="line-number">7</span>
+                                <span class="code-text">    };</span>
+                            </div>
+                            <div class="code-line">
+                                <span class="line-number">8</span>
+                                <span class="code-text">}</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="hero-scroll">
-            <div class="scroll-indicator">
-                <span>Scroll Down</span>
-                <i class="fas fa-chevron-down"></i>
+        <div class="scroll-indicator">
+            <div class="scroll-text">Scroll to explore</div>
+            <div class="scroll-arrow">
+                <i data-lucide="chevron-down"></i>
             </div>
         </div>
     </section>
@@ -251,41 +192,49 @@
     <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
-            <div class="section-header" data-anime="fade-up">
+            <div class="section-header">
                 <h2 class="section-title">About Me</h2>
                 <p class="section-subtitle">Passionate about creating scalable solutions</p>
             </div>
             <div class="about-content">
                 <div class="about-text">
-                    <p class="about-intro" data-anime="fade-up" data-anime-delay="200">
-                        I'm a <strong>Full Stack Developer</strong> with over 5 years of experience building enterprise-scale web applications.
-                        Currently working as a <strong>Software Engineer</strong> at <strong>Kiotviet Technology Corporation</strong>, where I develop
-                        and maintain software used by <strong>70,000+ businesses</strong> globally.
-                    </p>
-                    <p data-anime="fade-up" data-anime-delay="400">
-                        My expertise lies in <strong>.NET Core</strong>, <strong>Angular</strong>, and modern web technologies. I'm passionate about writing clean,
-                        efficient code and building solutions that make a real impact. Having received the <strong>Best Staff Award</strong> for two consecutive years,
-                        I'm committed to delivering excellence in every project.
-                    </p>
+                    <div class="about-intro">
+                        <p>
+                            I'm a <strong>Full Stack Developer</strong> with over 5 years of experience building enterprise-scale web applications.
+                            Currently working as a <strong>Software Engineer</strong> at <strong>Kiotviet Technology Corporation</strong>, where I develop
+                            and maintain software used by <strong>70,000+ businesses</strong> globally.
+                        </p>
+                        <p>
+                            My expertise lies in <strong>.NET Core</strong>, <strong>Angular</strong>, and modern web technologies. I'm passionate about writing clean,
+                            efficient code and building solutions that make a real impact. Having received the <strong>Best Staff Award</strong> for two consecutive years,
+                            I'm committed to delivering excellence in every project.
+                        </p>
+                    </div>
                     <div class="about-highlights">
-                        <div class="highlight-item" data-anime="slide-right" data-anime-delay="600">
-                            <i class="fas fa-award"></i>
-                            <div>
+                        <div class="highlight-card">
+                            <div class="highlight-icon">
+                                <i data-lucide="award"></i>
+                            </div>
+                            <div class="highlight-content">
                                 <h4>Award Winner</h4>
                                 <p>Best Staff Award for 2 consecutive years</p>
                             </div>
                         </div>
-                        <div class="highlight-item" data-anime="slide-right" data-anime-delay="800">
-                            <i class="fas fa-code"></i>
-                            <div>
+                        <div class="highlight-card">
+                            <div class="highlight-icon">
+                                <i data-lucide="code-2"></i>
+                            </div>
+                            <div class="highlight-content">
                                 <h4>Technical Excellence</h4>
                                 <p>Building scalable enterprise solutions</p>
                             </div>
                         </div>
-                        <div class="highlight-item" data-anime="slide-right" data-anime-delay="1000">
-                            <i class="fas fa-chart-line"></i>
-                            <div>
-                                <h4>Impact</h4>
+                        <div class="highlight-card">
+                            <div class="highlight-icon">
+                                <i data-lucide="trending-up"></i>
+                            </div>
+                            <div class="highlight-content">
+                                <h4>Global Impact</h4>
                                 <p>Software used by 70,000+ businesses globally</p>
                             </div>
                         </div>
@@ -298,84 +247,132 @@
     <!-- Skills Section -->
     <section id="skills" class="skills">
         <div class="container">
-            <div class="section-header" data-anime="fade-up">
+            <div class="section-header">
                 <h2 class="section-title">Technical Skills</h2>
                 <p class="section-subtitle">Expertise in modern technologies</p>
             </div>
             <div class="skills-content">
-                <div class="skills-categories">
-                    <div class="skill-category" data-anime="fade-up" data-anime-delay="200">
-                        <h3>Backend Development</h3>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3 class="category-title">Backend Development</h3>
                         <div class="skill-list">
-                            <div class="skill-item expert" data-anime="slide-right" data-anime-delay="400">
-                                <i class="fab fa-microsoft"></i>
-                                <span>C# .NET Core</span>
-                                <div class="skill-level">Expert</div>
+                            <div class="skill-item expert">
+                                <div class="skill-icon">
+                                    <i data-lucide="server"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <span class="skill-name">C# .NET Core</span>
+                                    <span class="skill-level">Expert</span>
+                                </div>
                             </div>
-                            <div class="skill-item expert" data-anime="slide-right" data-anime-delay="500">
-                                <i class="fas fa-code"></i>
-                                <span>ASP.NET MVC</span>
-                                <div class="skill-level">Expert</div>
+                            <div class="skill-item expert">
+                                <div class="skill-icon">
+                                    <i data-lucide="globe"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <span class="skill-name">ASP.NET MVC</span>
+                                    <span class="skill-level">Expert</span>
+                                </div>
                             </div>
-                            <div class="skill-item expert" data-anime="slide-right" data-anime-delay="600">
-                                <i class="fas fa-database"></i>
-                                <span>Entity Framework</span>
-                                <div class="skill-level">Expert</div>
+                            <div class="skill-item expert">
+                                <div class="skill-icon">
+                                    <i data-lucide="database"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <span class="skill-name">Entity Framework</span>
+                                    <span class="skill-level">Expert</span>
+                                </div>
                             </div>
-                            <div class="skill-item expert" data-anime="slide-right" data-anime-delay="700">
-                                <i class="fas fa-server"></i>
-                                <span>Web API</span>
-                                <div class="skill-level">Expert</div>
+                            <div class="skill-item expert">
+                                <div class="skill-icon">
+                                    <i data-lucide="api"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <span class="skill-name">Web API</span>
+                                    <span class="skill-level">Expert</span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="skill-category" data-anime="fade-up" data-anime-delay="400">
-                        <h3>Frontend Development</h3>
+                    <div class="skill-category">
+                        <h3 class="category-title">Frontend Development</h3>
                         <div class="skill-list">
-                            <div class="skill-item expert" data-anime="slide-right" data-anime-delay="600">
-                                <i class="fab fa-angular"></i>
-                                <span>Angular</span>
-                                <div class="skill-level">Expert</div>
+                            <div class="skill-item expert">
+                                <div class="skill-icon">
+                                    <i data-lucide="triangle"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <span class="skill-name">Angular</span>
+                                    <span class="skill-level">Expert</span>
+                                </div>
                             </div>
-                            <div class="skill-item expert" data-anime="slide-right" data-anime-delay="700">
-                                <i class="fab fa-js"></i>
-                                <span>TypeScript</span>
-                                <div class="skill-level">Expert</div>
+                            <div class="skill-item expert">
+                                <div class="skill-icon">
+                                    <i data-lucide="code"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <span class="skill-name">TypeScript</span>
+                                    <span class="skill-level">Expert</span>
+                                </div>
                             </div>
-                            <div class="skill-item proficient" data-anime="slide-right" data-anime-delay="800">
-                                <i class="fab fa-html5"></i>
-                                <span>HTML5/CSS3</span>
-                                <div class="skill-level">Proficient</div>
+                            <div class="skill-item proficient">
+                                <div class="skill-icon">
+                                    <i data-lucide="layout"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <span class="skill-name">HTML5/CSS3</span>
+                                    <span class="skill-level">Proficient</span>
+                                </div>
                             </div>
-                            <div class="skill-item proficient" data-anime="slide-right" data-anime-delay="900">
-                                <i class="fab fa-bootstrap"></i>
-                                <span>Bootstrap</span>
-                                <div class="skill-level">Proficient</div>
+                            <div class="skill-item proficient">
+                                <div class="skill-icon">
+                                    <i data-lucide="palette"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <span class="skill-name">Bootstrap</span>
+                                    <span class="skill-level">Proficient</span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="skill-category" data-anime="fade-up" data-anime-delay="600">
-                        <h3>Database & Tools</h3>
+                    <div class="skill-category">
+                        <h3 class="category-title">Database & Tools</h3>
                         <div class="skill-list">
-                            <div class="skill-item expert" data-anime="slide-right" data-anime-delay="800">
-                                <i class="fas fa-database"></i>
-                                <span>MS SQL Server</span>
-                                <div class="skill-level">Expert</div>
+                            <div class="skill-item expert">
+                                <div class="skill-icon">
+                                    <i data-lucide="hard-drive"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <span class="skill-name">MS SQL Server</span>
+                                    <span class="skill-level">Expert</span>
+                                </div>
                             </div>
-                            <div class="skill-item proficient" data-anime="slide-right" data-anime-delay="900">
-                                <i class="fas fa-leaf"></i>
-                                <span>MongoDB</span>
-                                <div class="skill-level">Proficient</div>
+                            <div class="skill-item proficient">
+                                <div class="skill-icon">
+                                    <i data-lucide="leaf"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <span class="skill-name">MongoDB</span>
+                                    <span class="skill-level">Proficient</span>
+                                </div>
                             </div>
-                            <div class="skill-item proficient" data-anime="slide-right" data-anime-delay="1000">
-                                <i class="fab fa-git-alt"></i>
-                                <span>Git</span>
-                                <div class="skill-level">Proficient</div>
+                            <div class="skill-item proficient">
+                                <div class="skill-icon">
+                                    <i data-lucide="git-branch"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <span class="skill-name">Git</span>
+                                    <span class="skill-level">Proficient</span>
+                                </div>
                             </div>
-                            <div class="skill-item proficient" data-anime="slide-right" data-anime-delay="1100">
-                                <i class="fas fa-memory"></i>
-                                <span>Redis</span>
-                                <div class="skill-level">Proficient</div>
+                            <div class="skill-item proficient">
+                                <div class="skill-icon">
+                                    <i data-lucide="zap"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <span class="skill-name">Redis</span>
+                                    <span class="skill-level">Proficient</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -387,28 +384,44 @@
     <!-- Experience Section -->
     <section id="experience" class="experience">
         <div class="container">
-            <div class="section-header" data-anime="fade-up">
+            <div class="section-header">
                 <h2 class="section-title">Professional Experience</h2>
                 <p class="section-subtitle">Building impactful solutions</p>
             </div>
             <div class="timeline">
-                <div class="timeline-item" data-anime="fade-up" data-anime-delay="200">
-                    <div class="timeline-item-content">
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <div class="marker-dot"></div>
+                    </div>
+                    <div class="timeline-content">
                         <div class="timeline-date">2018 - Present</div>
-                        <div class="timeline-content">
+                        <div class="experience-card">
                             <h3>Senior Software Engineer</h3>
                             <h4>Kiotviet Technology Corporation</h4>
                             <p>Leading the development of Vietnam's most popular business management software, serving 70,000+ businesses nationwide with comprehensive POS, inventory, and financial management solutions.</p>
-                            <ul class="achievement-list">
-                                <li data-anime="fade-up" data-anime-delay="400">🏆 Best Staff Award recipient for 2 consecutive years (2022-2023)</li>
-                                <li data-anime="fade-up" data-anime-delay="500">👥 Collaborating with cross-functional teams to deliver high-quality solutions</li>
-                                <li data-anime="fade-up" data-anime-delay="600">📊 Architected and implemented advanced reporting system using Telerik Reporting</li>
-                                <li data-anime="fade-up" data-anime-delay="700">🚀 Developed 15+ new features for Web and Mobile APIs, increasing user engagement by 40%</li>
-                                <li data-anime="fade-up" data-anime-delay="800">⚡ Optimized microservices architecture, reducing response time by 60%</li>
-                                <li data-anime="fade-up" data-anime-delay="900">🔧 Led system migration from monolithic to microservices architecture</li>
-                                <li data-anime="fade-up" data-anime-delay="1000">📈 Implemented real-time dashboard improving business insights for clients</li>
-                            </ul>
-                            <div class="tech-stack" data-anime="fade-up" data-anime-delay="1100">
+                            <div class="achievements">
+                                <div class="achievement-item">
+                                    <i data-lucide="award"></i>
+                                    <span>Best Staff Award recipient for 2 consecutive years (2022-2023)</span>
+                                </div>
+                                <div class="achievement-item">
+                                    <i data-lucide="users"></i>
+                                    <span>Collaborating with cross-functional teams to deliver high-quality solutions</span>
+                                </div>
+                                <div class="achievement-item">
+                                    <i data-lucide="bar-chart"></i>
+                                    <span>Architected and implemented advanced reporting system using Telerik Reporting</span>
+                                </div>
+                                <div class="achievement-item">
+                                    <i data-lucide="rocket"></i>
+                                    <span>Developed 15+ new features for Web and Mobile APIs, increasing user engagement by 40%</span>
+                                </div>
+                                <div class="achievement-item">
+                                    <i data-lucide="zap"></i>
+                                    <span>Optimized microservices architecture, reducing response time by 60%</span>
+                                </div>
+                            </div>
+                            <div class="tech-stack">
                                 <span class="tech-tag">.NET Core</span>
                                 <span class="tech-tag">Angular</span>
                                 <span class="tech-tag">Entity Framework</span>
@@ -421,21 +434,39 @@
                         </div>
                     </div>
                 </div>
-                <div class="timeline-item" data-anime="fade-up" data-anime-delay="400">
-                    <div class="timeline-item-content">
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <div class="marker-dot"></div>
+                    </div>
+                    <div class="timeline-content">
                         <div class="timeline-date">2017 - 2018</div>
-                        <div class="timeline-content">
+                        <div class="experience-card">
                             <h3>Full Stack Developer</h3>
                             <h4>Viam Vina Technology Co., Ltd</h4>
                             <p>Developed comprehensive web solutions including corporate website, product catalog, and customer management system for technology company specializing in industrial automation.</p>
-                            <ul class="achievement-list">
-                                <li data-anime="fade-up" data-anime-delay="600">🌐 Built complete web solution from requirements gathering to deployment</li>
-                                <li data-anime="fade-up" data-anime-delay="700">📱 Developed responsive landing page and interactive product catalog</li>
-                                <li data-anime="fade-up" data-anime-delay="800">🔧 Full-stack implementation using .NET MVC 5 with clean architecture</li>
-                                <li data-anime="fade-up" data-anime-delay="900">💼 Implemented customer inquiry system with email notifications</li>
-                                <li data-anime="fade-up" data-anime-delay="1000">🎨 Created modern UI/UX design increasing user engagement by 200%</li>
-                            </ul>
-                            <div class="tech-stack" data-anime="fade-up" data-anime-delay="1100">
+                            <div class="achievements">
+                                <div class="achievement-item">
+                                    <i data-lucide="globe"></i>
+                                    <span>Built complete web solution from requirements gathering to deployment</span>
+                                </div>
+                                <div class="achievement-item">
+                                    <i data-lucide="smartphone"></i>
+                                    <span>Developed responsive landing page and interactive product catalog</span>
+                                </div>
+                                <div class="achievement-item">
+                                    <i data-lucide="settings"></i>
+                                    <span>Full-stack implementation using .NET MVC 5 with clean architecture</span>
+                                </div>
+                                <div class="achievement-item">
+                                    <i data-lucide="mail"></i>
+                                    <span>Implemented customer inquiry system with email notifications</span>
+                                </div>
+                                <div class="achievement-item">
+                                    <i data-lucide="trending-up"></i>
+                                    <span>Created modern UI/UX design increasing user engagement by 200%</span>
+                                </div>
+                            </div>
+                            <div class="tech-stack">
                                 <span class="tech-tag">.NET MVC 5</span>
                                 <span class="tech-tag">MS SQL Server</span>
                                 <span class="tech-tag">jQuery</span>
@@ -446,20 +477,35 @@
                         </div>
                     </div>
                 </div>
-                <div class="timeline-item" data-anime="fade-up" data-anime-delay="600">
-                    <div class="timeline-item-content">
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <div class="marker-dot"></div>
+                    </div>
+                    <div class="timeline-content">
                         <div class="timeline-date">2017</div>
-                        <div class="timeline-content">
+                        <div class="experience-card">
                             <h3>Software Development Intern</h3>
                             <h4>Freelance Projects</h4>
                             <p>Gained practical experience through various freelance projects while transitioning from academic to professional software development.</p>
-                            <ul class="achievement-list">
-                                <li data-anime="fade-up" data-anime-delay="800">🎯 Completed 5+ successful freelance projects with 100% client satisfaction</li>
-                                <li data-anime="fade-up" data-anime-delay="900">🏗️ Built small-scale web applications for local businesses</li>
-                                <li data-anime="fade-up" data-anime-delay="1000">📚 Applied academic knowledge to real-world problems</li>
-                                <li data-anime="fade-up" data-anime-delay="1100">🤝 Developed strong client communication and project management skills</li>
-                            </ul>
-                            <div class="tech-stack" data-anime="fade-up" data-anime-delay="1200">
+                            <div class="achievements">
+                                <div class="achievement-item">
+                                    <i data-lucide="target"></i>
+                                    <span>Completed 5+ successful freelance projects with 100% client satisfaction</span>
+                                </div>
+                                <div class="achievement-item">
+                                    <i data-lucide="building"></i>
+                                    <span>Built small-scale web applications for local businesses</span>
+                                </div>
+                                <div class="achievement-item">
+                                    <i data-lucide="book-open"></i>
+                                    <span>Applied academic knowledge to real-world problems</span>
+                                </div>
+                                <div class="achievement-item">
+                                    <i data-lucide="handshake"></i>
+                                    <span>Developed strong client communication and project management skills</span>
+                                </div>
+                            </div>
+                            <div class="tech-stack">
                                 <span class="tech-tag">ASP.NET</span>
                                 <span class="tech-tag">C#</span>
                                 <span class="tech-tag">SQL Server</span>
@@ -469,9 +515,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="timeline-completion">
-                    <i class="fas fa-check"></i>
-                </div>
             </div>
         </div>
     </section>
@@ -479,14 +522,17 @@
     <!-- Projects Section -->
     <section id="projects" class="projects">
         <div class="container">
-            <div class="section-header" data-anime="fade-up">
+            <div class="section-header">
                 <h2 class="section-title">Featured Projects</h2>
                 <p class="section-subtitle">Showcasing my technical expertise</p>
             </div>
             <div class="projects-grid">
-                <div class="project-card featured" data-anime="zoom-in" data-anime-delay="200">
-                    <div class="project-image">
-                        <i class="fas fa-store"></i>
+                <div class="project-card featured">
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <i data-lucide="store"></i>
+                        </div>
+                        <div class="project-status">Featured</div>
                     </div>
                     <div class="project-content">
                         <h3>KiotViet Business Management Platform</h3>
@@ -500,15 +546,17 @@
                         </div>
                         <div class="project-links">
                             <a href="#" class="project-link">
-                                <i class="fas fa-external-link-alt"></i>
-                                Live Demo
+                                <i data-lucide="external-link"></i>
+                                <span>Live Demo</span>
                             </a>
                         </div>
                     </div>
                 </div>
-                <div class="project-card" data-anime="zoom-in" data-anime-delay="400">
-                    <div class="project-image">
-                        <i class="fas fa-briefcase-medical"></i>
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <i data-lucide="briefcase-medical"></i>
+                        </div>
                     </div>
                     <div class="project-content">
                         <h3>My Pharmacy Career Platform</h3>
@@ -522,15 +570,17 @@
                         </div>
                         <div class="project-links">
                             <a href="#" class="project-link">
-                                <i class="fas fa-external-link-alt"></i>
-                                View Project
+                                <i data-lucide="external-link"></i>
+                                <span>View Project</span>
                             </a>
                         </div>
                     </div>
                 </div>
-                <div class="project-card" data-anime="zoom-in" data-anime-delay="600">
-                    <div class="project-image">
-                        <i class="fab fa-github"></i>
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <i data-lucide="github"></i>
+                        </div>
                     </div>
                     <div class="project-content">
                         <h3>Open Source Contributions</h3>
@@ -544,8 +594,8 @@
                         </div>
                         <div class="project-links">
                             <a href="https://github.com/ChuKhaLi" class="project-link" target="_blank">
-                                <i class="fab fa-github"></i>
-                                View GitHub
+                                <i data-lucide="github"></i>
+                                <span>View GitHub</span>
                             </a>
                         </div>
                     </div>
@@ -557,26 +607,44 @@
     <!-- Education Section -->
     <section id="education" class="education">
         <div class="container">
-            <div class="section-header" data-anime="fade-up">
+            <div class="section-header">
                 <h2 class="section-title">Education & Achievements</h2>
                 <p class="section-subtitle">Academic excellence and continuous learning</p>
             </div>
-            <div class="timeline education-timeline">
-                <div class="timeline-item" data-anime="fade-right" data-anime-delay="200">
-                    <div class="timeline-item-content">
-                        <div class="timeline-date">2013 - 2017</div>
-                        <div class="timeline-content">
+            <div class="education-timeline">
+                <div class="education-item">
+                    <div class="education-date">2013 - 2017</div>
+                    <div class="education-card">
+                        <div class="education-icon">
+                            <i data-lucide="graduation-cap"></i>
+                        </div>
+                        <div class="education-content">
                             <h3>Bachelor of Software Engineering</h3>
                             <h4>University of Kinh Bac</h4>
                             <p>Comprehensive computer science education with focus on software engineering principles, algorithms, and modern development practices.</p>
-                            <ul class="achievement-list">
-                                <li data-anime="fade-up" data-anime-delay="400">🎓 GPA: 3.6/4.0 - Consistently high academic performance</li>
-                                <li data-anime="fade-up" data-anime-delay="500">🏆 Top 3 Graduated Students in 2017 - Academic excellence recognition</li>
-                                <li data-anime="fade-up" data-anime-delay="600">🎖️ First-class Scholarship for 4 consecutive years - Merit-based financial support</li>
-                                <li data-anime="fade-up" data-anime-delay="700">📚 Specialized in Object-Oriented Programming and Database Design</li>
-                                <li data-anime="fade-up" data-anime-delay="800">💻 Capstone Project: E-commerce Platform using ASP.NET MVC</li>
-                            </ul>
-                            <div class="tech-stack" data-anime="fade-up" data-anime-delay="900">
+                            <div class="achievements">
+                                <div class="achievement-item">
+                                    <i data-lucide="star"></i>
+                                    <span>GPA: 3.6/4.0 - Consistently high academic performance</span>
+                                </div>
+                                <div class="achievement-item">
+                                    <i data-lucide="trophy"></i>
+                                    <span>Top 3 Graduated Students in 2017 - Academic excellence recognition</span>
+                                </div>
+                                <div class="achievement-item">
+                                    <i data-lucide="medal"></i>
+                                    <span>First-class Scholarship for 4 consecutive years - Merit-based financial support</span>
+                                </div>
+                                <div class="achievement-item">
+                                    <i data-lucide="code"></i>
+                                    <span>Specialized in Object-Oriented Programming and Database Design</span>
+                                </div>
+                                <div class="achievement-item">
+                                    <i data-lucide="laptop"></i>
+                                    <span>Capstone Project: E-commerce Platform using ASP.NET MVC</span>
+                                </div>
+                            </div>
+                            <div class="tech-stack">
                                 <span class="tech-tag">C#</span>
                                 <span class="tech-tag">ASP.NET MVC</span>
                                 <span class="tech-tag">SQL Server</span>
@@ -587,21 +655,39 @@
                         </div>
                     </div>
                 </div>
-                <div class="timeline-item" data-anime="fade-left" data-anime-delay="400">
-                    <div class="timeline-item-content">
-                        <div class="timeline-date">2017 - 2018</div>
-                        <div class="timeline-content">
+                <div class="education-item">
+                    <div class="education-date">2017 - 2018</div>
+                    <div class="education-card">
+                        <div class="education-icon">
+                            <i data-lucide="book-open"></i>
+                        </div>
+                        <div class="education-content">
                             <h3>Professional Development</h3>
                             <h4>Continuous Learning & Certifications</h4>
                             <p>Focused on bridging academic knowledge with industry requirements through specialized courses and certifications.</p>
-                            <ul class="achievement-list">
-                                <li data-anime="fade-up" data-anime-delay="600">📜 The Complete ASP.NET MVC 5 Course - Advanced web development</li>
-                                <li data-anime="fade-up" data-anime-delay="700">⭐ Top Rated on Upwork (100% Success Rate) - Freelance excellence</li>
-                                <li data-anime="fade-up" data-anime-delay="800">📖 Head First Design Patterns - Software architecture mastery</li>
-                                <li data-anime="fade-up" data-anime-delay="900">📘 Pro ASP.NET MVC 5 - Enterprise-level development</li>
-                                <li data-anime="fade-up" data-anime-delay="1000">🎯 Industry-Ready Skills Development Program</li>
-                            </ul>
-                            <div class="tech-stack" data-anime="fade-up" data-anime-delay="1100">
+                            <div class="achievements">
+                                <div class="achievement-item">
+                                    <i data-lucide="scroll"></i>
+                                    <span>The Complete ASP.NET MVC 5 Course - Advanced web development</span>
+                                </div>
+                                <div class="achievement-item">
+                                    <i data-lucide="star"></i>
+                                    <span>Top Rated on Upwork (100% Success Rate) - Freelance excellence</span>
+                                </div>
+                                <div class="achievement-item">
+                                    <i data-lucide="book"></i>
+                                    <span>Head First Design Patterns - Software architecture mastery</span>
+                                </div>
+                                <div class="achievement-item">
+                                    <i data-lucide="bookmark"></i>
+                                    <span>Pro ASP.NET MVC 5 - Enterprise-level development</span>
+                                </div>
+                                <div class="achievement-item">
+                                    <i data-lucide="target"></i>
+                                    <span>Industry-Ready Skills Development Program</span>
+                                </div>
+                            </div>
+                            <div class="tech-stack">
                                 <span class="tech-tag">Design Patterns</span>
                                 <span class="tech-tag">MVC Architecture</span>
                                 <span class="tech-tag">Entity Framework</span>
@@ -612,21 +698,39 @@
                         </div>
                     </div>
                 </div>
-                <div class="timeline-item" data-anime="fade-right" data-anime-delay="600">
-                    <div class="timeline-item-content">
-                        <div class="timeline-date">2018 - Present</div>
-                        <div class="timeline-content">
+                <div class="education-item">
+                    <div class="education-date">2018 - Present</div>
+                    <div class="education-card">
+                        <div class="education-icon">
+                            <i data-lucide="trending-up"></i>
+                        </div>
+                        <div class="education-content">
                             <h3>Continuous Learning</h3>
                             <h4>Modern Technology Stack</h4>
                             <p>Staying current with evolving technologies and best practices in software development through ongoing education and practical application.</p>
-                            <ul class="achievement-list">
-                                <li data-anime="fade-up" data-anime-delay="800">🚀 Angular Framework Mastery - Modern frontend development</li>
-                                <li data-anime="fade-up" data-anime-delay="900">☁️ Cloud Technologies - Azure and AWS fundamentals</li>
-                                <li data-anime="fade-up" data-anime-delay="1000">🐳 DevOps Practices - Docker, CI/CD pipelines</li>
-                                <li data-anime="fade-up" data-anime-delay="1100">🎯 Agile Methodologies - Scrum and project management</li>
-                                <li data-anime="fade-up" data-anime-delay="1200">👥 Leadership Development - Team management and mentoring</li>
-                            </ul>
-                            <div class="tech-stack" data-anime="fade-up" data-anime-delay="1300">
+                            <div class="achievements">
+                                <div class="achievement-item">
+                                    <i data-lucide="rocket"></i>
+                                    <span>Angular Framework Mastery - Modern frontend development</span>
+                                </div>
+                                <div class="achievement-item">
+                                    <i data-lucide="cloud"></i>
+                                    <span>Cloud Technologies - Azure and AWS fundamentals</span>
+                                </div>
+                                <div class="achievement-item">
+                                    <i data-lucide="container"></i>
+                                    <span>DevOps Practices - Docker, CI/CD pipelines</span>
+                                </div>
+                                <div class="achievement-item">
+                                    <i data-lucide="target"></i>
+                                    <span>Agile Methodologies - Scrum and project management</span>
+                                </div>
+                                <div class="achievement-item">
+                                    <i data-lucide="users"></i>
+                                    <span>Leadership Development - Team management and mentoring</span>
+                                </div>
+                            </div>
+                            <div class="tech-stack">
                                 <span class="tech-tag">Angular</span>
                                 <span class="tech-tag">TypeScript</span>
                                 <span class="tech-tag">Docker</span>
@@ -637,9 +741,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="timeline-completion">
-                    <i class="fas fa-graduation-cap"></i>
-                </div>
             </div>
         </div>
     </section>
@@ -647,66 +748,78 @@
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
-            <div class="section-header" data-anime="fade-up">
+            <div class="section-header">
                 <h2 class="section-title">Get In Touch</h2>
                 <p class="section-subtitle">Let's build something amazing together</p>
             </div>
             <div class="contact-content">
-                <div class="contact-info" data-anime="fade-right" data-anime-delay="200">
-                    <h3>Let's Connect</h3>
-                    <p>I'm always open to discussing new opportunities, interesting projects, or just having a chat about technology.</p>
+                <div class="contact-info">
+                    <div class="contact-intro">
+                        <h3>Let's Connect</h3>
+                        <p>I'm always open to discussing new opportunities, interesting projects, or just having a chat about technology.</p>
+                    </div>
                     <div class="contact-methods">
-                        <div class="contact-method" data-anime="slide-right" data-anime-delay="400">
-                            <i class="fas fa-envelope"></i>
-                            <div>
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i data-lucide="mail"></i>
+                            </div>
+                            <div class="method-content">
                                 <h4>Email</h4>
                                 <a href="mailto:chungdinhnguyen.ukb@gmail.com">chungdinhnguyen.ukb@gmail.com</a>
                             </div>
                         </div>
-                        <div class="contact-method" data-anime="slide-right" data-anime-delay="500">
-                            <i class="fas fa-phone"></i>
-                            <div>
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i data-lucide="phone"></i>
+                            </div>
+                            <div class="method-content">
                                 <h4>Phone</h4>
                                 <a href="tel:+84348925736">(+84) 34 892 5736</a>
                             </div>
                         </div>
-                        <div class="contact-method" data-anime="slide-right" data-anime-delay="600">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div>
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i data-lucide="map-pin"></i>
+                            </div>
+                            <div class="method-content">
                                 <h4>Location</h4>
                                 <span>Remote / Global</span>
                             </div>
                         </div>
                     </div>
-                    <div class="social-links" data-anime="fade-up" data-anime-delay="700">
+                    <div class="social-links">
                         <a href="https://www.linkedin.com/in/chung-nguyen-dinh/" target="_blank" class="social-link">
-                            <i class="fab fa-linkedin"></i>
+                            <i data-lucide="linkedin"></i>
                         </a>
                         <a href="https://github.com/ChuKhaLi" target="_blank" class="social-link">
-                            <i class="fab fa-github"></i>
+                            <i data-lucide="github"></i>
                         </a>
                         <a href="#" class="social-link">
-                            <i class="fab fa-twitter"></i>
+                            <i data-lucide="twitter"></i>
                         </a>
                     </div>
                 </div>
-                <div class="contact-form" data-anime="fade-left" data-anime-delay="400">
-                    <form id="contact-form">
-                        <div class="form-group" data-anime="fade-up" data-anime-delay="600">
-                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                <div class="contact-form">
+                    <form id="contact-form" class="form">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" id="name" name="name" class="form-input" required>
                         </div>
-                        <div class="form-group" data-anime="fade-up" data-anime-delay="700">
-                            <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" id="email" name="email" class="form-input" required>
                         </div>
-                        <div class="form-group" data-anime="fade-up" data-anime-delay="800">
-                            <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                        <div class="form-group">
+                            <label for="subject" class="form-label">Subject</label>
+                            <input type="text" id="subject" name="subject" class="form-input" required>
                         </div>
-                        <div class="form-group" data-anime="fade-up" data-anime-delay="900">
-                            <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                        <div class="form-group">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea id="message" name="message" class="form-textarea" rows="5" required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary" data-anime="zoom-in" data-anime-delay="1000">
-                            <i class="fas fa-paper-plane"></i>
-                            Send Message
+                        <button type="submit" class="btn btn-primary btn-full">
+                            <i data-lucide="send"></i>
+                            <span>Send Message</span>
                         </button>
                     </form>
                 </div>
@@ -734,82 +847,10 @@
     </footer>
 
     <!-- Scripts -->
-    <!-- Anime.js Animation Library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-    <script>
-        // Initialize Anime.js animations
-        document.addEventListener('DOMContentLoaded', function() {
-            // Fade up animation for elements with data-anime="fade-up"
-            const fadeUpElements = document.querySelectorAll('[data-anime="fade-up"]');
-            fadeUpElements.forEach((element, index) => {
-                const delay = element.getAttribute('data-anime-delay') || 0;
-                anime({
-                    targets: element,
-                    opacity: [0, 1],
-                    translateY: [30, 0],
-                    duration: 800,
-                    delay: parseInt(delay),
-                    easing: 'easeInOutQuad'
-                });
-            });
-
-            // Fade left animation for elements with data-anime="fade-left"
-            const fadeLeftElements = document.querySelectorAll('[data-anime="fade-left"]');
-            fadeLeftElements.forEach((element, index) => {
-                const delay = element.getAttribute('data-anime-delay') || 0;
-                anime({
-                    targets: element,
-                    opacity: [0, 1],
-                    translateX: [50, 0],
-                    duration: 800,
-                    delay: parseInt(delay),
-                    easing: 'easeInOutQuad'
-                });
-            });
-
-            // Fade right animation for elements with data-anime="fade-right"
-            const fadeRightElements = document.querySelectorAll('[data-anime="fade-right"]');
-            fadeRightElements.forEach((element, index) => {
-                const delay = element.getAttribute('data-anime-delay') || 0;
-                anime({
-                    targets: element,
-                    opacity: [0, 1],
-                    translateX: [-50, 0],
-                    duration: 800,
-                    delay: parseInt(delay),
-                    easing: 'easeInOutQuad'
-                });
-            });
-
-            // Zoom in animation for elements with data-anime="zoom-in"
-            const zoomInElements = document.querySelectorAll('[data-anime="zoom-in"]');
-            zoomInElements.forEach((element, index) => {
-                const delay = element.getAttribute('data-anime-delay') || 0;
-                anime({
-                    targets: element,
-                    opacity: [0, 1],
-                    scale: [0.5, 1],
-                    duration: 800,
-                    delay: parseInt(delay),
-                    easing: 'easeInOutQuad'
-                });
-            });
-
-            // Slide right animation for elements with data-anime="slide-right"
-            const slideRightElements = document.querySelectorAll('[data-anime="slide-right"]');
-            slideRightElements.forEach((element, index) => {
-                const delay = element.getAttribute('data-anime-delay') || 0;
-                anime({
-                    targets: element,
-                    opacity: [0, 1],
-                    translateX: [-30, 0],
-                    duration: 800,
-                    delay: parseInt(delay),
-                    easing: 'easeInOutQuad'
-                });
-            });
-        });
-    </script>
     <script src="script.js"></script>
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
 </body>
 </html>
